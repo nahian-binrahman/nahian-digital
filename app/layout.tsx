@@ -89,7 +89,7 @@ export default function RootLayout({
         <ScrollProgress />
         <SmoothScroll />
         <Navbar />
-        <main className="flex-1 w-full overflow-x-hidden">{children}</main>
+        <main className="flex-1 w-full overflow-x-hidden pt-16 sm:pt-20">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

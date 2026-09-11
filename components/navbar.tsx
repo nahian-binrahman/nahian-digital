@@ -29,13 +29,17 @@ export function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300 px-3 sm:px-6 lg:px-8 pt-2.5 sm:pt-3.5 pb-2">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 pointer-events-none px-3 sm:px-6 lg:px-8 ${
+        isScrolled ? "pt-2 sm:pt-2.5" : "pt-3 sm:pt-4"
+      }`}
+    >
       <div
-        className={`mx-auto max-w-6xl transition-all duration-300 rounded-2xl sm:rounded-full border ${
+        className={`mx-auto max-w-6xl transition-all duration-300 pointer-events-auto rounded-2xl sm:rounded-full border ${
           isScrolled
-            ? "bg-[#0b0e14]/80 backdrop-blur-xl border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.6),0_1px_3px_rgba(255,255,255,0.03)]"
-            : "bg-[#0f131d]/60 backdrop-blur-md border-white/8 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-        } px-4 sm:px-6 py-2 sm:py-2.5`}
+            ? "bg-[#0b0e14]/90 backdrop-blur-xl border-blue-500/25 shadow-[0_12px_40px_rgba(0,0,0,0.85),0_0_24px_rgba(59,130,246,0.12)] py-1.5 sm:py-2 scale-[0.99] sm:scale-100"
+            : "bg-[#0f131d]/70 backdrop-blur-md border-white/8 shadow-[0_4px_20px_rgba(0,0,0,0.3)] py-2 sm:py-2.5"
+        } px-4 sm:px-6`}
       >
         <div className="flex items-center justify-between">
           {/* Brand Mark */}

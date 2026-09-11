@@ -153,10 +153,10 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
 export function Solutions() {
   return (
-    <section id="solutions-overview" className="py-14 sm:py-20 lg:py-28 bg-transparent scroll-mt-20">
+    <section id="solutions-overview" className="pt-10 sm:pt-12 pb-8 sm:pb-10 bg-transparent scroll-mt-20">
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <SectionHeading
             badge="Solutions"
             title="One partner across technology, AI, creative and growth."
@@ -165,14 +165,14 @@ export function Solutions() {
         </div>
 
         {/* 2x2 Responsive Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
           {SOLUTIONS_DATA.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
         {/* Soft CTA Underneath */}
-        <div className="mt-14 pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-8 pt-5 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-sm sm:text-base font-medium text-stone-300">
             Have something different in mind?
           </p>

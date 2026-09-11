@@ -59,10 +59,10 @@ const PROBLEMS: ProblemItem[] = [
 
 export function ProblemsSolved() {
   return (
-    <section id="solutions" className="py-14 sm:py-20 lg:py-28 relative scroll-mt-20">
+    <section id="solutions" className="pt-10 sm:pt-12 pb-10 sm:pb-12 relative scroll-mt-20">
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <SectionHeading
             badge="How I Help"
             title="Business problems turned into practical digital solutions."

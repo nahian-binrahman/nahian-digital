@@ -34,7 +34,7 @@ export function Hero() {
             {/* Supporting Headline Copy */}
             <p className="text-base sm:text-lg font-normal text-stone-200 leading-snug max-w-xl">
               I build digital systems that help businesses attract customers,
-              automate operations, launch faster, and grow.
+              automate operations, launch faster and grow.
             </p>
 
             {/* Additional Detail Copy */}

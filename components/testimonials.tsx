@@ -20,10 +20,10 @@ const ICON_MAP: Record<string, LucideIcon> = {
 
 export function Testimonials() {
   return (
-    <section className="py-20 sm:py-28 bg-transparent border-b border-white/8 scroll-mt-20">
+    <section className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-transparent border-b border-white/8 scroll-mt-20">
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <SectionHeading
             badge="Trust & Credibility"
             title="Engineered for reliability, velocity, and measurable impact."
@@ -32,7 +32,7 @@ export function Testimonials() {
         </div>
 
         {/* Qualitative Trust Pillars Bar (No Fake Statistics) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           {TRUST_PILLARS.map((pillar) => {
             const Icon = ICON_MAP[pillar.iconName] || UserCheck;
             return (

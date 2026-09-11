@@ -6,10 +6,10 @@ import { ArrowUpRight, Clock } from "lucide-react";
 
 export function Journal() {
   return (
-    <section id="journal" className="py-20 sm:py-28 bg-transparent scroll-mt-20 border-b border-white/8">
+    <section id="journal" className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-transparent scroll-mt-20 border-b border-white/8">
       <Container>
         {/* Section Heading */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <SectionHeading
             badge="Insights"
             title="The Journal."

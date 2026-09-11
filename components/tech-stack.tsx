@@ -225,16 +225,16 @@ const TECH_GROUPS: TechGroup[] = [
 
 export function TechStack() {
   return (
-    <section className="py-20 sm:py-28 bg-transparent border-b border-white/8 scroll-mt-20 relative overflow-hidden">
+    <section className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-transparent border-b border-white/8 scroll-mt-20 relative overflow-hidden">
       {/* Ambient background glow */}
       <div
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-blue-600/[0.05] blur-[120px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[750px] rounded-full bg-blue-600/[0.04] blur-[100px]"
         aria-hidden="true"
       />
 
       <Container className="relative">
         {/* Section Heading */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <SectionHeading
             badge="Capabilities"
             title="Technology behind the solutions."
@@ -243,41 +243,41 @@ export function TechStack() {
         </div>
 
         {/* 4 Interactive 3D Category Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 [perspective:1200px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 [perspective:1200px]">
           {TECH_GROUPS.map((group) => {
             const Icon = group.icon;
             return (
               <TiltCard
                 key={group.name}
-                maxTilt={6}
+                maxTilt={5}
                 spotlightColor="rgba(59, 130, 246, 0.16)"
-                className="rounded-2xl border border-white/10 bg-[#0f131d]/85 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.7),0_0_24px_rgba(59,130,246,0.12)] flex flex-col justify-between"
+                className="rounded-2xl border border-white/10 bg-[#0f131d]/85 p-3.5 sm:p-4 backdrop-blur-md transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_16px_36px_rgba(0,0,0,0.7),0_0_20px_rgba(59,130,246,0.12)] flex flex-col justify-between"
               >
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/8">
-                    <div className="flex items-center gap-2.5">
-                      <div className="h-8 w-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-stone-200 group-hover/tilt:bg-blue-600 group-hover/tilt:text-white transition-colors duration-300 shadow-xs">
-                        <Icon className="h-4 w-4 text-blue-400 group-hover/tilt:text-white transition-colors duration-300" />
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/8">
+                    <div className="flex items-center gap-2">
+                      <div className="h-7 w-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-stone-200 shadow-xs">
+                        <Icon className="h-3.5 w-3.5 text-blue-400" />
                       </div>
-                      <h3 className="text-sm font-semibold tracking-tight text-white">
+                      <h3 className="text-xs sm:text-sm font-semibold tracking-tight text-white">
                         {group.name}
                       </h3>
                     </div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-blue-400/90 bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded-full">
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-blue-400/90 bg-blue-500/10 border border-blue-500/20 px-1.5 py-0.5 rounded-full">
                       {group.categoryBadge}
                     </span>
                   </div>
 
                   {/* Tech Logo Pills */}
-                  <div className="space-y-2.5">
+                  <div className="space-y-1.5 sm:space-y-2">
                     {group.items.map((tech) => (
                       <div
                         key={tech.name}
-                        className="group/item flex items-center justify-between rounded-xl border border-white/6 bg-white/[0.03] px-3 py-2.5 transition-all duration-200 hover:scale-[1.02] hover:bg-white/[0.07] hover:border-blue-500/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.4),0_0_12px_rgba(59,130,246,0.1)] cursor-default"
+                        className="group/item flex items-center justify-between rounded-xl border border-white/6 bg-white/[0.03] px-2.5 py-1.5 sm:py-2 transition-all duration-200 hover:scale-[1.01] hover:bg-white/[0.07] hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(0,0,0,0.4)] cursor-default"
                       >
-                        <div className="flex items-center gap-2.5">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-black/40 border border-white/10 p-1 transition-transform duration-200 group-hover/item:scale-110">
+                        <div className="flex items-center gap-2">
+                          <div className="flex h-5 w-5 items-center justify-center rounded-md bg-black/40 border border-white/10 p-0.5">
                             {tech.icon}
                           </div>
                           <span className="text-xs font-semibold text-stone-200 group-hover/item:text-white transition-colors">
@@ -290,12 +290,6 @@ export function TechStack() {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Footer cue */}
-                <div className="pt-4 mt-5 border-t border-white/6 flex items-center justify-between text-[11px] font-mono text-stone-400">
-                  <span>Stack Verified</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
                 </div>
               </TiltCard>
             );

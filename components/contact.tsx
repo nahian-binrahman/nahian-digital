@@ -126,10 +126,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-14 sm:py-20 lg:py-28 bg-transparent scroll-mt-20">
+    <section id="contact" className="pt-10 sm:pt-12 pb-14 sm:pb-18 bg-transparent scroll-mt-20">
       <Container>
         {/* ================= PART 1: CLOSING CONVERSION CTA ================= */}
-        <div className="rounded-3xl border border-white/10 bg-[#0f131d]/85 backdrop-blur-md p-6 sm:p-10 lg:p-16 shadow-2xl mb-12 sm:mb-16 lg:mb-20 text-center relative overflow-hidden">
+        <div className="rounded-3xl border border-white/10 bg-[#0f131d]/85 backdrop-blur-md p-5 sm:p-8 lg:p-10 shadow-2xl mb-10 sm:mb-12 text-center relative overflow-hidden">
           {/* Subtle Ambient Vignette */}
           <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
 

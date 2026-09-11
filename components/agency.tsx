@@ -77,10 +77,10 @@ const CAPABILITIES: CapabilityRole[] = [
 
 export function Agency() {
   return (
-    <section id="nahian-digital" className="py-14 sm:py-20 lg:py-28 bg-[#090b10] border-y border-white/8 text-stone-100 scroll-mt-20 relative">
+    <section id="nahian-digital" className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-[#090b10] border-y border-white/8 text-stone-100 scroll-mt-20 relative">
       <Container>
         {/* Section Header: Identity & Ethos */}
-        <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-stone-300 mb-4 backdrop-blur-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
             <span>Nahian Digital · Remote Studio Model</span>

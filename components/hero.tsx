@@ -39,9 +39,9 @@ export function Hero() {
 
             {/* Additional Detail Copy */}
             <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-lg">
-              From high-converting websites and SaaS products to AI automation,
-              creative campaigns and growth systems — I help turn business ideas
-              and bottlenecks into practical digital solutions.
+              From AI robotics (ROS 2) and automated workflows to modern web applications,
+              SaaS, and digital growth systems — I help turn ideas and operational
+              bottlenecks into high-impact solutions.
             </p>
 
             {/* CTAs */}
@@ -49,7 +49,7 @@ export function Hero() {
               <Button
                 href="#contact"
                 variant="primary"
-                size="default"
+                size="md"
                 className="gap-2 shadow-xs px-5 py-2.5 w-full sm:w-auto justify-center"
               >
                 Start a Project
@@ -58,7 +58,7 @@ export function Hero() {
               <Button
                 href="#work"
                 variant="outline"
-                size="default"
+                size="md"
                 className="px-5 py-2.5 w-full sm:w-auto justify-center"
               >
                 See My Work
@@ -71,9 +71,11 @@ export function Hero() {
                 Focus Areas
               </p>
               <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-stone-300">
-                <span>Software</span>
+                <span>Robotics</span>
                 <span className="text-stone-700">·</span>
                 <span>AI</span>
+                <span className="text-stone-700">·</span>
+                <span>Software</span>
                 <span className="text-stone-700">·</span>
                 <span>Automation</span>
                 <span className="text-stone-700">·</span>

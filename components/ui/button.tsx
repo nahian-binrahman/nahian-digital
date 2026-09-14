@@ -8,15 +8,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_28px_rgba(59,130,246,0.5)] border border-blue-400/30",
+          "bg-blue-600 !text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_28px_rgba(59,130,246,0.5)] border border-blue-400/30",
         secondary:
-          "bg-white/10 text-white hover:bg-white/15 border border-white/10 shadow-xs",
+          "bg-slate-100 text-slate-800 dark:bg-white/10 dark:text-white hover:bg-slate-200 dark:hover:bg-white/15 border border-slate-300 dark:border-white/10 shadow-xs",
         outline:
-          "bg-transparent text-stone-200 hover:text-white hover:bg-white/5 border border-white/20 hover:border-white/40 shadow-xs",
+          "bg-white/70 text-slate-800 dark:bg-transparent dark:text-stone-200 hover:bg-white dark:hover:bg-white/5 border border-slate-300 dark:border-white/20 hover:border-slate-400 dark:hover:border-white/40 shadow-xs",
         ghost:
-          "bg-transparent text-stone-400 hover:text-white hover:bg-white/5",
+          "bg-transparent text-slate-600 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5",
         accent:
-          "bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)]",
+          "bg-blue-600 !text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)]",
       },
       size: {
         sm: "h-9 px-3.5 text-xs tracking-wide",

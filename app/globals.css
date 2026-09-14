@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08090d;
-  --foreground: #f3f4f6;
-  --muted: #9ca3af;
-  --subtle: #6b7280;
-  --surface: #0f1219;
-  --surface-raised: #151924;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  --accent: #3b82f6;
+  --background: #090d16;
+  --foreground: #f8fafc;
+  --muted: #a1a1aa;
+  --subtle: #71717a;
+  --surface: #0f1523;
+  --surface-raised: #161f33;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --accent: #38bdf8;
   --accent-blue: #3b82f6;
-  --accent-ring: rgba(59, 130, 246, 0.3);
+  --accent-ring: rgba(56, 189, 248, 0.35);
+}
+
+html.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --subtle: #64748b;
+  --surface: #ffffff;
+  --surface-raised: #f1f5f9;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --accent: #0284c7;
+  --accent-blue: #2563eb;
+  --accent-ring: rgba(2, 132, 199, 0.25);
 }
 
 @theme inline {
@@ -30,12 +44,18 @@ html {
   width: 100%;
 }
 
+html.light {
+  color-scheme: light;
+}
+
 body {
   background-color: var(--background);
   background-image: 
-    radial-gradient(at 15% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 45%),
-    radial-gradient(at 85% 25%, rgba(37, 99, 235, 0.05) 0px, transparent 40%),
-    radial-gradient(at 50% 75%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+    radial-gradient(at 15% 5%, rgba(99, 102, 241, 0.16) 0px, transparent 45%),
+    radial-gradient(at 85% 15%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 45%, rgba(59, 130, 246, 0.12) 0px, transparent 55%),
+    radial-gradient(at 10% 70%, rgba(16, 185, 129, 0.10) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--foreground);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -45,34 +65,320 @@ body {
   width: 100%;
   max-width: 100%;
   -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 15% 5%, rgba(99, 102, 241, 0.08) 0px, transparent 45%),
+    radial-gradient(at 85% 15%, rgba(14, 165, 233, 0.09) 0px, transparent 45%),
+    radial-gradient(at 50% 45%, rgba(59, 130, 246, 0.06) 0px, transparent 55%),
+    radial-gradient(at 10% 70%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(168, 85, 247, 0.07) 0px, transparent 50%);
+  color: #0f172a;
 }
 
 /* Subtle selection */
 ::selection {
-  background-color: #2563eb;
+  background-color: #0284c7;
   color: #ffffff;
 }
 
-/* Luxury dark glass and card styling */
+/* Linear/Stripe-tier frosted glassmorphism (Dark) */
 .glass-panel {
-  background: rgba(16, 20, 29, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 21, 35, 0.65);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .luxury-card {
-  background: rgba(15, 18, 26, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  background: rgba(14, 19, 32, 0.62);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 16px 40px -6px rgba(0, 0, 0, 0.65), 0 0 24px rgba(59, 130, 246, 0.12);
+  transform: translateY(-3px);
+  background: rgba(18, 25, 42, 0.75);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 30px rgba(56, 189, 248, 0.18), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Ambient mesh aura utility */
+.ambient-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+html.light .aurora-blob {
+  opacity: 0.25;
+  filter: blur(110px);
+}
+
+/* ==========================================================================
+   Ultra-Modern Premium Light Mode Design System (Linear / Stripe Style)
+   ========================================================================== */
+
+/* 1. Typography Hierarchy */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0f172a !important;
+}
+
+html.light p {
+  color: #475569;
+}
+
+html.light .text-white {
+  color: #0f172a;
+}
+
+html.light .text-stone-100,
+html.light .text-stone-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-stone-300,
+html.light .text-stone-400 {
+  color: #475569 !important;
+}
+
+html.light .text-stone-500 {
+  color: #64748b !important;
+}
+
+/* 2. PROTECT Primary Buttons, Dark Banners, and Brand Marks */
+html.light .bg-blue-600,
+html.light .bg-blue-500,
+html.light [class*="bg-blue-600"],
+html.light button[class*="bg-blue-600"],
+html.light a[class*="bg-blue-600"],
+html.light .bg-blue-600 *,
+html.light [class*="bg-blue-600"] * {
+  color: #ffffff !important;
+  fill: #ffffff;
+}
+
+html.light .bg-gradient-to-br.from-blue-600 * {
+  color: #ffffff !important;
+}
+
+/* Brand Logo Text Contrast */
+.brand-logo-text {
+  color: #ffffff;
+}
+html.light .brand-logo-text {
+  color: #0f172a !important;
+}
+html.dark .brand-logo-text,
+.dark .brand-logo-text {
+  color: #ffffff !important;
+}
+
+.brand-logo-subtext {
+  color: #a8a29e;
+}
+html.light .brand-logo-subtext {
+  color: #475569 !important;
+}
+html.dark .brand-logo-subtext,
+.dark .brand-logo-subtext {
+  color: #a8a29e !important;
+}
+
+/* 3. Dark CTA Contrast Banners in Light Mode */
+html.light [class*="from-[#0c1220]"],
+html.light [class*="from-blue-950"],
+html.light [class*="from-stone-950"] {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light [class*="from-[#0c1220]"] h4,
+html.light [class*="from-[#0c1220]"] h3,
+html.light [class*="from-blue-950"] h4,
+html.light [class*="from-blue-950"] h3,
+html.light [class*="from-stone-950"] h4 {
+  color: #ffffff !important;
+}
+
+html.light [class*="from-[#0c1220]"] p,
+html.light [class*="from-blue-950"] p,
+html.light [class*="from-stone-950"] p {
+  color: #cbd5e1 !important;
+}
+
+/* 4. Frosted Porcelain Glass Cards */
+html.light .glass-panel,
+html.light .luxury-card,
+html.light [class*="bg-[#0d1322]"],
+html.light [class*="bg-[#0c1017]"],
+html.light [class*="bg-[#0f131d]"],
+html.light [class*="bg-[#0f1219]"],
+html.light [class*="bg-stone-900"] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+}
+
+html.light [class*="bg-[#0d1322]"]:hover,
+html.light [class*="bg-[#0c1017]"]:hover,
+html.light [class*="bg-[#0f131d]"]:hover {
+  background-color: #ffffff !important;
+}
+
+/* 4b. Vivid Chromatic Card Hover & Shadows in Light Mode */
+html.light .hover\:border-amber-400\/60:hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 20px 45px -10px rgba(245, 158, 11, 0.28), 0 0 30px rgba(245, 158, 11, 0.18) !important;
+}
+
+html.light .hover\:border-emerald-400\/60:hover {
+  border-color: #10b981 !important;
+  box-shadow: 0 20px 45px -10px rgba(16, 185, 129, 0.28), 0 0 30px rgba(16, 185, 129, 0.18) !important;
+}
+
+html.light .hover\:border-cyan-400\/60:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 20px 45px -10px rgba(6, 182, 212, 0.28), 0 0 30px rgba(6, 182, 212, 0.18) !important;
+}
+
+html.light .hover\:border-purple-400\/60:hover {
+  border-color: #a855f7 !important;
+  box-shadow: 0 20px 45px -10px rgba(168, 85, 247, 0.28), 0 0 30px rgba(168, 85, 247, 0.18) !important;
+}
+
+html.light .hover\:border-sky-400\/60:hover,
+html.light .hover\:border-sky-400\/50:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 20px 45px -10px rgba(2, 132, 199, 0.28), 0 0 30px rgba(2, 132, 199, 0.18) !important;
+}
+
+html.light .hover\:border-indigo-400\/60:hover {
+  border-color: #6366f1 !important;
+  box-shadow: 0 20px 45px -10px rgba(99, 102, 241, 0.28), 0 0 30px rgba(99, 102, 241, 0.18) !important;
+}
+
+html.light .hover\:border-pink-400\/60:hover,
+html.light .hover\:border-rose-400\/60:hover {
+  border-color: #f43f5e !important;
+  box-shadow: 0 20px 45px -10px rgba(244, 63, 94, 0.28), 0 0 30px rgba(244, 63, 94, 0.18) !important;
+}
+
+html.light .hover\:border-violet-400\/60:hover {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 20px 45px -10px rgba(139, 92, 246, 0.28), 0 0 30px rgba(139, 92, 246, 0.18) !important;
+}
+
+html.light .hover\:border-teal-400\/60:hover {
+  border-color: #14b8a6 !important;
+  box-shadow: 0 20px 45px -10px rgba(20, 184, 166, 0.28), 0 0 30px rgba(20, 184, 166, 0.18) !important;
+}
+
+/* Light Mode Card Gradient Aura Highlights */
+html.light .group:hover .bg-gradient-to-b {
+  opacity: 0.8 !important;
+  filter: saturate(140%) blur(24px) !important;
+}
+
+/* 5. Light Mode Borders & Separators */
+html.light [class*="border-white/"],
+html.light [class*="border-stone-800"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light [class*="border-white\\[0.08\\]"],
+html.light [class*="border-white\\[0.12\\]"],
+html.light [class*="border-white\\[0.1\\]"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 6. Micro Badges & Icon Containers */
+html.light [class*="bg-white/5"],
+html.light [class*="bg-white/10"],
+html.light [class*="bg-white/[0.04]"],
+html.light [class*="bg-white/[0.02]"] {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #334155 !important;
+}
+
+html.light [class*="bg-black/65"] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 7. Navbar Styling */
+html.light header > div {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light header nav {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light header nav a {
+  color: #475569 !important;
+}
+
+html.light header nav a:hover {
+  color: #0f172a !important;
+  background-color: #e2e8f0 !important;
+}
+
+/* 8. Footer & Form Elements */
+html.light footer {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(248, 250, 252, 0.85) !important;
+}
+
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
 }
 
 /* Lenis smooth scroll */
@@ -96,4 +402,3 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
-

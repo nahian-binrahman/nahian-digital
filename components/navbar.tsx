@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS = [
   { name: "Home", href: "#home" },
   { name: "Solutions", href: "#solutions" },
-  { name: "Work", href: "#work" },
+  { name: "Case Studies", href: "#work" },
   { name: "Nahian Digital", href: "#nahian-digital" },
   { name: "About", href: "#about" },
   { name: "Journal", href: "#journal" },
@@ -45,21 +46,21 @@ export function Navbar() {
           {/* Brand Mark */}
           <a
             href="#home"
-            className="group flex items-center gap-3 text-white transition-opacity hover:opacity-90"
+            className="group flex items-center gap-3 transition-opacity hover:opacity-90"
             aria-label="Nahian Digital - Home"
           >
-            <div className="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-b from-stone-800 to-stone-950 text-white font-semibold text-xs sm:text-sm tracking-tight shadow-[0_2px_8px_rgba(0,0,0,0.3)] border border-white/10">
-              <span>N</span>
+            <div className="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 !text-white font-bold text-xs sm:text-sm tracking-tight shadow-[0_4px_14px_rgba(37,99,235,0.4)] border border-blue-400/40 shrink-0">
+              <span className="!text-white font-bold">N</span>
               <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-300 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
               </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-semibold tracking-tight text-white flex items-center gap-1.5">
+              <span className="brand-logo-text text-sm sm:text-base font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
                 Nahian Digital
               </span>
-              <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium hidden sm:inline-block">
+              <span className="brand-logo-subtext text-[10px] uppercase tracking-wider text-slate-600 dark:text-stone-400 font-medium hidden sm:inline-block">
                 Software · AI · Growth
               </span>
             </div>
@@ -78,13 +79,9 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop Right Actions: Status + CTA */}
+          {/* Desktop Right Actions: Theme Toggle + CTA */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Real-time Availability Pill */}
-            <div className="hidden xl:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-stone-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span>Available for Q2/Q3</span>
-            </div>
+            <ThemeToggle />
 
             <Button
               href="#contact"
@@ -99,6 +96,8 @@ export function Navbar() {
 
           {/* Mobile & Tablet Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+
             <Button
               href="#contact"
               variant="primary"

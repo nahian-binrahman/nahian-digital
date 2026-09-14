@@ -75,20 +75,68 @@ export function ProblemsSolved() {
           {PROBLEMS.map((item, index) => {
             const Icon = item.icon;
             const isWide = index >= 3;
+            const colorThemes = [
+              {
+                aura: "from-emerald-500/25 via-teal-500/10 to-transparent",
+                borderHover: "hover:border-emerald-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(52,211,153,0.22)]",
+                iconBg: "group-hover:bg-emerald-500 group-hover:border-emerald-400 group-hover:text-white",
+                spotlight: "rgba(52, 211, 153, 0.25)",
+                textHover: "group-hover:text-emerald-300",
+              },
+              {
+                aura: "from-cyan-500/25 via-sky-500/10 to-transparent",
+                borderHover: "hover:border-cyan-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(6,182,212,0.22)]",
+                iconBg: "group-hover:bg-cyan-500 group-hover:border-cyan-400 group-hover:text-white",
+                spotlight: "rgba(6, 182, 212, 0.25)",
+                textHover: "group-hover:text-cyan-300",
+              },
+              {
+                aura: "from-purple-500/25 via-indigo-500/10 to-transparent",
+                borderHover: "hover:border-purple-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(168,85,247,0.22)]",
+                iconBg: "group-hover:bg-purple-600 group-hover:border-purple-400 group-hover:text-white",
+                spotlight: "rgba(168, 85, 247, 0.25)",
+                textHover: "group-hover:text-purple-300",
+              },
+              {
+                aura: "from-amber-500/25 via-orange-500/10 to-transparent",
+                borderHover: "hover:border-amber-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(251,191,36,0.22)]",
+                iconBg: "group-hover:bg-amber-500 group-hover:border-amber-400 group-hover:text-white",
+                spotlight: "rgba(251, 191, 36, 0.25)",
+                textHover: "group-hover:text-amber-300",
+              },
+              {
+                aura: "from-rose-500/25 via-pink-500/10 to-transparent",
+                borderHover: "hover:border-rose-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(244,63,94,0.22)]",
+                iconBg: "group-hover:bg-rose-500 group-hover:border-rose-400 group-hover:text-white",
+                spotlight: "rgba(244, 63, 94, 0.25)",
+                textHover: "group-hover:text-rose-300",
+              },
+            ];
+            const pTheme = colorThemes[index % colorThemes.length];
 
             return (
               <TiltCard
                 key={item.problem}
                 maxTilt={7}
-                spotlightColor="rgba(59, 130, 246, 0.22)"
-                className={`group rounded-2xl border border-white/10 bg-[#0f131d]/85 p-5 sm:p-7 md:p-8 backdrop-blur-md transition-shadow duration-300 hover:border-blue-500/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(59,130,246,0.15)] ${
-                  isWide ? "lg:col-span-1 lg:last:col-span-2 xl:last:col-span-1" : ""
-                }`}
+                spotlightColor={pTheme.spotlight}
+                className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0d1322]/70 p-5 sm:p-7 md:p-8 backdrop-blur-2xl transition-all duration-400 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:bg-[#12192e]/90 shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.12)] ${
+                  pTheme.borderHover
+                } ${isWide ? "lg:col-span-1 lg:last:col-span-2 xl:last:col-span-1" : ""}`}
               >
-                <div>
+                {/* Top Colorful Aurora Beam */}
+                <div
+                  className={`pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-48 w-4/5 rounded-full bg-gradient-to-b ${pTheme.aura} blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+
+                {/* Shimmering top border beam */}
+                <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                <div className="relative z-10">
                   {/* Icon & Category Tag */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-stone-200 transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500/40 shadow-xs">
+                    <div
+                      className={`flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-stone-200 transition-all duration-300 shadow-xs ${pTheme.iconBg}`}
+                    >
                       <Icon className="h-5 w-5" />
                     </div>
                     <span className="text-[11px] font-medium uppercase tracking-wider text-stone-400">
@@ -97,7 +145,9 @@ export function ProblemsSolved() {
                   </div>
 
                   {/* Problem Question Headline */}
-                  <h3 className="text-xl font-semibold tracking-tight text-white mb-2.5">
+                  <h3
+                    className={`text-xl font-semibold tracking-tight text-white mb-2.5 transition-colors duration-300 ${pTheme.textHover}`}
+                  >
                     {item.problem}
                   </h3>
 
@@ -108,7 +158,7 @@ export function ProblemsSolved() {
                 </div>
 
                 {/* Micro Action Link */}
-                <div className="pt-6 mt-4 border-t border-white/8">
+                <div className="pt-6 mt-4 border-t border-white/8 relative z-10">
                   <a
                     href="#contact"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-300 group-hover:text-blue-400 transition-colors"

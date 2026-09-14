@@ -38,26 +38,26 @@ export function About() {
                     Nahian Bin Rahman
                   </h3>
                   <p className="text-[11px] font-medium text-stone-400">
-                    Software Engineer · Digital Builder · Founder of Nahian Digital
+                    Roboticist · Software Engineer · Founder of Nahian Digital
                   </p>
                 </div>
               </div>
 
               {/* Compact Educational & Global Credentials */}
               <div className="mt-3 space-y-2">
-                <div className="flex items-center gap-2.5 rounded-xl border border-white/8 bg-[#0f131d]/75 backdrop-blur-md px-3 py-2 text-xs text-stone-300 shadow-sm">
+                <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.12] bg-[#0d1322]/65 backdrop-blur-xl px-3 py-2 text-xs text-stone-300 shadow-[0_4px_16px_rgba(0,0,0,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
                   <GraduationCap className="h-4 w-4 text-blue-400 shrink-0" />
                   <div>
-                    <span className="font-semibold text-white text-xs">Mechatronics Engineering</span>
-                    <span className="block text-stone-400 text-[10px]">Beijing Institute of Technology</span>
+                    <span className="font-semibold text-white text-xs">Intelligent Mechatronics & Robotics</span>
+                    <span className="block text-stone-400 text-[10px]">Autonomous Systems & ROS 2 Specialization</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 rounded-xl border border-white/8 bg-[#0f131d]/75 backdrop-blur-md px-3 py-2 text-xs text-stone-300 shadow-sm">
+                <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.12] bg-[#0d1322]/65 backdrop-blur-xl px-3 py-2 text-xs text-stone-300 shadow-[0_4px_16px_rgba(0,0,0,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
                   <Globe2 className="h-4 w-4 text-blue-400 shrink-0" />
                   <div>
-                    <span className="font-semibold text-white text-xs">Global Nomadic Perspective</span>
-                    <span className="block text-stone-400 text-[10px]">Tech exposure across Shenzhen, Shanghai & Asia</span>
+                    <span className="font-semibold text-white text-xs">Global Engineering Rigor</span>
+                    <span className="block text-stone-400 text-[10px]">Cross-border development & international clients</span>
                   </div>
                 </div>
               </div>
@@ -90,14 +90,14 @@ export function About() {
             {/* Concise Story Paragraphs */}
             <div className="space-y-2.5 text-xs sm:text-sm leading-relaxed text-stone-400">
               <p>
-                I am a software engineer, digital builder, and the founder of <strong className="text-white font-medium">Nahian Digital</strong>.
-                My work bridges modern full-stack development, AI-driven automation, creative media, and digital acquisition funnels.
+                I am a roboticist, software engineer, and the founder of <strong className="text-white font-medium">Nahian Digital</strong>.
+                My work bridges autonomous robotics (ROS 2), modern full-stack development, AI-driven automation, and digital acquisition funnels.
               </p>
               <p>
-                Having studied Intelligent Mechatronics Engineering at Beijing Institute of Technology and worked across the tech hubs of Shenzhen and Shanghai, I approach digital systems with an engineer&apos;s discipline and an operator&apos;s pragmatism.
+                Specializing in Intelligent Mechatronics & Robotics Engineering, I approach software engineering and digital systems with a roboticist&apos;s physical precision and an operator&apos;s commercial pragmatism.
               </p>
               <p>
-                Collaborating as a digital nomad across Asia has shaped how I work: asynchronous, unencumbered by bureaucracy, and focused purely on business impact.
+                From architecting ROS 2 autonomous navigation pipelines to deploying production AI agents and scalable micro-SaaS platforms, I focus on resilient, real-world execution.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export function About() {
               <Button
                 href="#contact"
                 variant="primary"
-                size="default"
+                size="md"
                 className="gap-2 shadow-xs px-5 py-2.5 w-full sm:w-auto justify-center"
               >
                 Let&apos;s Work Together

@@ -61,12 +61,16 @@ export function Testimonials() {
           {TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col justify-between rounded-2xl border border-white/8 bg-[#0f131d]/75 p-7 sm:p-8 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-200 hover:-translate-y-1 hover:border-blue-500/35 hover:shadow-[0_16px_40px_rgba(0,0,0,0.6),0_0_24px_rgba(59,130,246,0.12)]"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0d1322]/70 p-7 sm:p-8 backdrop-blur-2xl transition-all duration-400 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-sky-400/60 hover:bg-[#12192e]/90 shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(56,189,248,0.2)]"
             >
-              <div>
+              {/* Top Colorful Aurora Beam */}
+              <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-44 w-4/5 rounded-full bg-gradient-to-b from-sky-500/20 via-blue-500/10 to-transparent blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+
+              <div className="relative z-10">
                 {/* Quote Icon & Placeholder Flag */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="h-8 w-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400">
+                  <div className="h-9 w-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-500/20">
                     <Quote className="h-4 w-4" />
                   </div>
                   {item.isPlaceholder && (

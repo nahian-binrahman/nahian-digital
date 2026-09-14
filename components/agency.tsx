@@ -77,7 +77,7 @@ const CAPABILITIES: CapabilityRole[] = [
 
 export function Agency() {
   return (
-    <section id="nahian-digital" className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-[#090b10] border-y border-white/8 text-stone-100 scroll-mt-20 relative">
+    <section id="nahian-digital" className="pt-10 sm:pt-12 pb-10 sm:pb-12 bg-transparent border-y border-white/8 scroll-mt-20 relative">
       <Container>
         {/* Section Header: Identity & Ethos */}
         <div className="max-w-3xl mb-8 sm:mb-10">
@@ -119,7 +119,7 @@ export function Agency() {
             </div>
 
             {/* Operating Badges */}
-            <div className="pt-8 mt-6 border-t border-stone-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div className="pt-8 mt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
               <div className="space-y-1">
                 <span className="text-stone-400">Leadership</span>
                 <p className="font-semibold text-white">Nahian Bin Rahman</p>
@@ -136,7 +136,7 @@ export function Agency() {
           </div>
 
           {/* Remote Network Card */}
-          <div className="lg:col-span-5 rounded-2xl border border-stone-800 bg-stone-950/80 p-5 sm:p-8 lg:p-10 flex flex-col justify-between">
+          <div className="lg:col-span-5 rounded-2xl border border-white/10 bg-[#0f131d]/85 backdrop-blur-md p-5 sm:p-8 lg:p-10 flex flex-col justify-between shadow-2xl">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-stone-400">
                 <Globe2 className="h-4 w-4 text-stone-400" />
@@ -151,7 +151,7 @@ export function Agency() {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-stone-800/80 space-y-2 text-xs text-stone-300">
+            <div className="pt-6 border-t border-white/10 space-y-2 text-xs text-stone-300">
               <div className="flex items-center gap-2">
                 <Zap className="h-3.5 w-3.5 text-amber-400 shrink-0" />
                 <span>Zero bureaucratic lag or handoff delays</span>
@@ -183,10 +183,10 @@ export function Agency() {
               return (
                 <div
                   key={role.title}
-                  className="rounded-xl border border-stone-800 bg-stone-950/60 p-5 transition-all duration-200 hover:border-stone-700 hover:bg-stone-950"
+                  className="rounded-xl border border-white/10 bg-[#0f131d]/60 backdrop-blur-md p-5 transition-all duration-200 hover:border-blue-500/40 hover:-translate-y-1 shadow-sm"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-stone-800/80 text-white">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-stone-200">
                       <Icon className="h-4 w-4" />
                     </div>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">
@@ -206,18 +206,18 @@ export function Agency() {
         </div>
 
         {/* Section Bottom Banner & CTA */}
-        <div className="rounded-2xl border border-stone-800 bg-gradient-to-r from-stone-950 to-stone-900 p-5 sm:p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0c1220] to-[#0f172a] p-5 sm:p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 shadow-2xl text-white">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-lg sm:text-xl font-semibold text-white">
+            <h4 className="text-lg sm:text-xl font-semibold !text-white">
               Ready to assemble the right team for your next digital initiative?
             </h4>
-            <p className="text-xs sm:text-sm text-stone-400">
+            <p className="text-xs sm:text-sm text-stone-300">
               Consult directly with Nahian to scope your roadmap, timelines, and deliverables.
             </p>
           </div>
           <Button
             href="#contact"
-            variant="accent"
+            variant="primary"
             size="lg"
             className="gap-2 shrink-0 shadow-sm w-full sm:w-auto justify-center"
           >

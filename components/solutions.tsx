@@ -89,16 +89,59 @@ interface ServiceCardProps {
   service: ServiceCategory;
 }
 
+const solutionThemes: Record<
+  string,
+  { aura: string; borderHover: string; iconBg: string; textHover: string }
+> = {
+  "01": {
+    aura: "from-sky-500/25 via-blue-500/10 to-transparent",
+    borderHover: "hover:border-sky-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(56,189,248,0.22)]",
+    iconBg: "group-hover:bg-sky-500 group-hover:border-sky-400 group-hover:text-white",
+    textHover: "group-hover:text-sky-300",
+  },
+  "02": {
+    aura: "from-purple-500/25 via-indigo-500/10 to-transparent",
+    borderHover: "hover:border-purple-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(168,85,247,0.22)]",
+    iconBg: "group-hover:bg-purple-600 group-hover:border-purple-400 group-hover:text-white",
+    textHover: "group-hover:text-purple-300",
+  },
+  "03": {
+    aura: "from-rose-500/25 via-pink-500/10 to-transparent",
+    borderHover: "hover:border-rose-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(244,63,94,0.22)]",
+    iconBg: "group-hover:bg-rose-600 group-hover:border-rose-400 group-hover:text-white",
+    textHover: "group-hover:text-rose-300",
+  },
+  "04": {
+    aura: "from-emerald-500/25 via-teal-500/10 to-transparent",
+    borderHover: "hover:border-emerald-400/60 hover:shadow-[0_24px_55px_rgba(0,0,0,0.7),0_0_35px_rgba(52,211,153,0.22)]",
+    iconBg: "group-hover:bg-emerald-600 group-hover:border-emerald-400 group-hover:text-white",
+    textHover: "group-hover:text-emerald-300",
+  },
+};
+
 export function ServiceCard({ service }: ServiceCardProps) {
   const Icon = service.icon;
+  const theme = solutionThemes[service.number] || solutionThemes["01"];
 
   return (
-    <div className="group relative flex flex-col justify-between rounded-2xl border border-white/8 bg-[#0f131d]/75 p-5 sm:p-7 md:p-9 backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-blue-500/35 hover:shadow-[0_16px_40px_rgba(0,0,0,0.6),0_0_24px_rgba(59,130,246,0.12)]">
-      <div>
+    <div
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0d1322]/70 p-5 sm:p-7 md:p-9 backdrop-blur-2xl transition-all duration-400 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:bg-[#12192e]/90 shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.12)] ${theme.borderHover}`}
+    >
+      {/* Top Colorful Aurora Beam */}
+      <div
+        className={`pointer-events-none absolute -top-28 left-1/2 -translate-x-1/2 h-56 w-4/5 rounded-full bg-gradient-to-b ${theme.aura} blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+      />
+
+      {/* Shimmering top border beam */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+
+      <div className="relative z-10">
         {/* Card Header: Number & Category Icon */}
         <div className="flex items-center justify-between pb-6 border-b border-white/8">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-stone-200 transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500/40 shadow-xs">
+            <div
+              className={`flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-stone-200 transition-all duration-300 shadow-xs ${theme.iconBg}`}
+            >
               <Icon className="h-5 w-5" />
             </div>
             <span className="text-xs font-mono font-semibold tracking-wider text-stone-400">
@@ -112,7 +155,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
         {/* Title & Description */}
         <div className="pt-6 pb-5">
-          <h3 className="text-2xl font-semibold tracking-tight text-white mb-2.5">
+          <h3
+            className={`text-2xl font-semibold tracking-tight text-white mb-2.5 transition-colors duration-300 ${theme.textHover}`}
+          >
             {service.title}
           </h3>
           <p className="text-sm leading-relaxed text-stone-400">
@@ -137,7 +182,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       {/* Subtle Inquire Link */}
-      <div className="pt-5 mt-4 border-t border-white/8 flex items-center justify-between">
+      <div className="pt-5 mt-4 border-t border-white/8 flex items-center justify-between relative z-10">
         <span className="text-xs text-stone-400">End-to-end execution</span>
         <a
           href="#contact"

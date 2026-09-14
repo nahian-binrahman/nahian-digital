@@ -30,13 +30,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     slug: "#journal",
   },
   {
-    id: "hardware-software-lessons",
-    title: "Lessons From Shenzhen & Shanghai: Speed, Supply Chains & Software",
-    category: "Global Perspectives",
+    id: "hardware-software-systems",
+    title: "Bridging Hardware & Code: Speed, Systems & Scalable Software",
+    category: "Systems & Engineering",
     readTime: "6 min read",
     date: "Jul 2026",
     summary:
-      "What rapid hardware prototyping and China's hyper-dense tech ecosystems teach software engineers about commercial velocity.",
+      "What rapid robotics prototyping and distributed architecture teach modern software engineers about commercial velocity and system resilience.",
     slug: "#journal",
   },
 ];

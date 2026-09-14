@@ -244,27 +244,64 @@ export function TechStack() {
 
         {/* 4 Interactive 3D Category Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 [perspective:1200px]">
-          {TECH_GROUPS.map((group) => {
+          {TECH_GROUPS.map((group, idx) => {
             const Icon = group.icon;
+            const techThemes = [
+              {
+                spotlight: "rgba(56, 189, 248, 0.25)",
+                borderHover: "hover:border-sky-400/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.7),0_0_30px_rgba(56,189,248,0.22)]",
+                aura: "from-sky-500/20 to-transparent",
+                iconColor: "text-sky-400",
+                badge: "text-sky-400 bg-sky-500/10 border-sky-500/20",
+              },
+              {
+                spotlight: "rgba(168, 85, 247, 0.25)",
+                borderHover: "hover:border-purple-400/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.7),0_0_30px_rgba(168,85,247,0.22)]",
+                aura: "from-purple-500/20 to-transparent",
+                iconColor: "text-purple-400",
+                badge: "text-purple-400 bg-purple-500/10 border-purple-500/20",
+              },
+              {
+                spotlight: "rgba(20, 184, 166, 0.25)",
+                borderHover: "hover:border-teal-400/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.7),0_0_30px_rgba(20,184,166,0.22)]",
+                aura: "from-teal-500/20 to-transparent",
+                iconColor: "text-teal-400",
+                badge: "text-teal-400 bg-teal-500/10 border-teal-500/20",
+              },
+              {
+                spotlight: "rgba(251, 191, 36, 0.25)",
+                borderHover: "hover:border-amber-400/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.7),0_0_30px_rgba(251,191,36,0.22)]",
+                aura: "from-amber-500/20 to-transparent",
+                iconColor: "text-amber-400",
+                badge: "text-amber-400 bg-amber-500/10 border-amber-500/20",
+              },
+            ];
+            const tTheme = techThemes[idx % techThemes.length];
+
             return (
               <TiltCard
                 key={group.name}
                 maxTilt={5}
-                spotlightColor="rgba(59, 130, 246, 0.16)"
-                className="rounded-2xl border border-white/10 bg-[#0f131d]/85 p-3.5 sm:p-4 backdrop-blur-md transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_16px_36px_rgba(0,0,0,0.7),0_0_20px_rgba(59,130,246,0.12)] flex flex-col justify-between"
+                spotlightColor={tTheme.spotlight}
+                className={`relative overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0d1322]/70 p-3.5 sm:p-4 backdrop-blur-2xl transition-all duration-400 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:bg-[#12192e]/90 shadow-[0_12px_32px_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.12)] flex flex-col justify-between ${tTheme.borderHover}`}
               >
-                <div>
+                {/* Top Subtle Aurora Glow */}
+                <div
+                  className={`pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-40 w-4/5 rounded-full bg-gradient-to-b ${tTheme.aura} blur-2xl opacity-0 transition-opacity duration-500 group-hover/tilt:opacity-100`}
+                />
+
+                <div className="relative z-10">
                   {/* Category Header */}
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/8">
                     <div className="flex items-center gap-2">
                       <div className="h-7 w-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-stone-200 shadow-xs">
-                        <Icon className="h-3.5 w-3.5 text-blue-400" />
+                        <Icon className={`h-3.5 w-3.5 ${tTheme.iconColor}`} />
                       </div>
                       <h3 className="text-xs sm:text-sm font-semibold tracking-tight text-white">
                         {group.name}
                       </h3>
                     </div>
-                    <span className="text-[9px] font-mono uppercase tracking-wider text-blue-400/90 bg-blue-500/10 border border-blue-500/20 px-1.5 py-0.5 rounded-full">
+                    <span className={`text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded-full border ${tTheme.badge}`}>
                       {group.categoryBadge}
                     </span>
                   </div>

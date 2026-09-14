@@ -94,6 +94,23 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           <p className="text-lg sm:text-xl text-stone-300 leading-relaxed max-w-3xl">
             {project.shortSummary}
           </p>
+
+          {project.liveUrl && (
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-amber-600 to-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-orange-500/25"
+              >
+                <span>Visit Live Store</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <span className="text-xs font-mono text-stone-400 bg-white/5 border border-white/10 px-3 py-2 rounded-xl">
+                {project.liveUrl.replace("https://", "").replace(/\/$/, "")}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* High-Resolution Project Showcase Image */}
@@ -108,6 +125,73 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#090d14] via-transparent to-transparent opacity-60" />
         </div>
+
+        {/* Additional Real Deliverables Preview for Meyer's */}
+        {project.id === "meyers-elgin-sausage" && (
+          <div className="mb-16 space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  Product Catalog & Online Ordering Experience
+                </h3>
+                <p className="text-sm text-stone-400 mt-1">
+                  Custom categorized navigation for Smoked Meats, Sausages, Gift Sets, and Pantry items.
+                </p>
+              </div>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300"
+              >
+                <span>Explore Catalog Live</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+              <div className="md:col-span-8 relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-stone-950 shadow-2xl">
+                <Image
+                  src="/images/case-studies/meyers-catalog.png"
+                  alt="Meyer's Elgin Sausage Product Grid"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="md:col-span-4 flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0f131d]/85 p-6 backdrop-blur-md">
+                <div className="space-y-4">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/10 bg-white p-4 flex items-center justify-center">
+                    <Image
+                      src="/images/case-studies/meyers-logo.png"
+                      alt="Meyer's Elgin Sausage Official Logo"
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold text-white">Texas Tradition Since 1949</h4>
+                    <p className="text-xs text-stone-400 mt-1 leading-relaxed">
+                      Preserving historic brand identity while deploying high-speed modern e-commerce architectures for nationwide direct-to-door delivery.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-white/10">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-xs font-semibold text-amber-300 transition-all hover:bg-amber-500/20"
+                  >
+                    <span>Order Online at meyerselginsausage.com</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Structured Breakdown: Challenge, Solution, Result */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">

@@ -221,8 +221,8 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
       {/* Bottom Footer Trigger */}
       <div className="mt-4 pt-3 border-t border-white/[0.07] flex items-center justify-between text-xs relative z-10">
         <span className="flex items-center gap-1 text-[11px] text-stone-400 group-hover:text-stone-300 transition-colors">
-          <Sparkles className="h-3 w-3 text-sky-400" />
-          Production Deliverable
+          <Sparkles className="h-3 w-3 text-amber-400" />
+          {project.liveUrl ? "Live Storefront" : "Production Deliverable"}
         </span>
         <span
           className={`font-semibold text-xs flex items-center gap-1 transition-all duration-300 ${colorTheme.buttonColor}`}

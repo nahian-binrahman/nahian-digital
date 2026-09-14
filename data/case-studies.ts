@@ -9,24 +9,26 @@ export interface CaseStudy {
   image: string;
   tags: string[];
   caseStudyUrl?: string;
+  liveUrl?: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "aura-commerce",
-    projectName: "Aura DTC Commerce",
+    id: "meyers-elgin-sausage",
+    projectName: "Meyer's Elgin Sausage E-Commerce",
     clientOrIndustry: "E-Commerce",
     shortSummary:
-      "High-conversion headless storefront with custom cart drawer, instant checkout flow, and sub-second page performance.",
+      "Full-featured e-commerce storefront for Texas' historic sausage brand with real-time online ordering, nationwide shipping fulfillment, and high-conversion mobile catalog.",
     problem:
-      "Legacy monolithic store suffered 4.2s load times, mobile checkout abandonment over 68%, and rigid promotional limits.",
+      "Meyer's historic Texas brand required a high-performance digital storefront to handle direct-to-consumer online orders, national shipping for perishable smoked meats, and an intuitive mobile catalog.",
     solution:
-      "Re-architected to a headless Next.js storefront powered by Shopify Storefront API, Tailwind CSS, and Edge-cached dynamic inventory.",
+      "Engineered an ultra-fast, mobile-optimized e-commerce storefront with categorized product hierarchies (Smoked Meats, Sausage, Gift Sets, Pantry), seamless checkout, and integrated shipping workflows.",
     result:
-      "Increased mobile conversion rate by 42%, cut median load latency to 420ms, and scaled through flash sale spikes without downtime.",
+      "Delivered a robust shopping experience connecting thousands of BBQ enthusiasts nationwide with an Elgin tradition since 1949, substantially increasing online sales conversion.",
     image: "/images/case-studies/ecommerce.jpg",
-    tags: ["E-Commerce", "Next.js", "Shopify Storefront", "Headless Cart", "Edge Caching"],
-    caseStudyUrl: "/case-studies/aura-commerce",
+    tags: ["E-Commerce Storefront", "Online Ordering", "Nationwide Fulfillment", "Mobile-Optimized", "High Conversion"],
+    caseStudyUrl: "/case-studies/meyers-elgin-sausage",
+    liveUrl: "https://meyerselginsausage.com/",
   },
   {
     id: "apex-ros2-robotics",
